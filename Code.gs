@@ -8,7 +8,7 @@ function etValidation(userInfo) {
                var b = String(userInfo.tei).trim();
                var compareTo = a + b;
                //Read google Sheet ["Data" columns "C" & "F"]
-               const url = "https://docs.google.com/spreadsheets/d/17EM-Ybh_nl-qVUK5NAIyC-2vwHPn1xeJ94dbMR1E1mU/edit#gid=0";
+               const url = "https://docs.google.com/spreadsheets/";
                const ss = SpreadsheetApp.openByUrl(url);
                const ws = ss.getSheetByName("Data");
                var lastRow = ws.getLastRow() - 1;
@@ -47,7 +47,7 @@ function etValidation(userInfo) {
 function callName(userInf) {
                var a = String(userInf.emp).trim();
                //Read google Sheet ["Data" columns "C" & "F"]
-               const url = "https://docs.google.com/spreadsheets/d/17EM-Ybh_nl-qVUK5NAIyC-2vwHPn1xeJ94dbMR1E1mU/edit#gid=0";
+               const url = "https://docs.google.com/spreadsheets/";
                const ss = SpreadsheetApp.openByUrl(url);
                const ws = ss.getSheetByName("Users");
                var lastRow = ws.getLastRow() - 1;
@@ -81,7 +81,7 @@ function callName(userInf) {
 function callEmail(userIn) {
                var a = String(userIn.emp).trim();
                //Read google Sheet ["Data" columns "C" & "F"]
-               const url = "https://docs.google.com/spreadsheets/d/17EM-Ybh_nl-qVUK5NAIyC-2vwHPn1xeJ94dbMR1E1mU/edit#gid=0";
+               const url = "https://docs.google.com/spreadsheets/";
                const ss = SpreadsheetApp.openByUrl(url);
                const ws = ss.getSheetByName("Users");
                var lastRow = ws.getLastRow() - 1;
@@ -115,7 +115,7 @@ function callEmail(userIn) {
 function callSoc(userI) {
                var a = String(userI.emp).trim();
                //Read google Sheet ["Data" columns "C" & "F"]
-               const url = "https://docs.google.com/spreadsheets/d/17EM-Ybh_nl-qVUK5NAIyC-2vwHPn1xeJ94dbMR1E1mU/edit#gid=0";
+               const url = "https://docs.google.com/spreadsheets/";
                const ss = SpreadsheetApp.openByUrl(url);
                const ws = ss.getSheetByName("Users");
                var lastRow = ws.getLastRow() - 1;
@@ -148,7 +148,7 @@ function callSoc(userI) {
 
 function postData(userInfoo, ur) {
   //Read google Sheet ["Data" columns "C" & "F"]
-  const url = "https://docs.google.com/spreadsheets/d/17EM-Ybh_nl-qVUK5NAIyC-2vwHPn1xeJ94dbMR1E1mU/edit#gid=0";
+  const url = "https://docs.google.com/spreadsheets/";
   const ss = SpreadsheetApp.openByUrl(url);
   const ws = ss.getSheetByName("Data");
   var arra_y = [new Date(), userInfoo.emai, userInfoo.empl, userInfoo.name, userInfoo.soci, userInfoo.teid, userInfoo.radi, userInfoo.ur, userInfoo.comm, Session.getActiveUser().getEmail()]; //Call the same object declared in HTML
