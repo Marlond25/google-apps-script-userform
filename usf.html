@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+      <base target="_top">
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS CDN from materializecss.com START -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <!-- Compiled and minified CSS from materializecss.com END -->
+
+      <!-- This is to include your css code from other pages so it is more organized / you have to create a function START-->
+      <?!= include("usf-css"); ?>
+      <!-- This is to include your css code from other pages so it is more organized / you have to create a function END -->
+
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+
+   </head>
+
+   <body>
+      <div class="navbar">
+        <div class="card-panel red darken-4" style="color: white; font-size:20pt;">Solicitud legalizaci�n gastos</div>
+      </div>
+
+      <div class="content"> <!-- HEADER PIC! -->
+         <img src="#" alt="screenSaverLH" height="180" />
+      </div>
+
+      <div id="bod" class="content">
+
+      <div class="container" style="border:medium solid rgb(94,80,71); width: 520px;"> <!-- OPEN CONTAINER -->
+
+      <!-- form action="https://script.google.com/a/lafargeholcim.com/macros/s/AKfycbzu_vpG2PBjuvonQ6TslPCfmqeMPpTB1CkWgkT_Y3A/dev" id="form" method="post" -->
+
+         <div class="row"> <!-- EMPLOYEE ID -->
+           <div class="input-field col s9" style="margin-top: 30px; margin-left: 60px;">
+             <input id="employeeId" type="text" class="validate">
+             <label for="employeeId">ID del empleado</label>
+           </div>
+         </div>
+
+         <div class="row"> <!-- NOMBRE FROM DB add value="Nombre del empleado" in case  -->
+           <div class="input-field col s9" style="margin-top: 10px; margin-left: 60px;">
+             <input disabled id="nma" type="text" class="validate">
+             <label id="nm" for="nma">Nombre del empleado</label>
+           </div>
+         </div>
+
+          <div class="row"> <!-- EMAIL FROM DB add value="e-mail" in case -->
+            <div class="input-field col s9" style="margin-top: 10px; margin-left: 60px;">
+              <input disabled id="ema" type="text" class="validate">
+              <label id="em" for="ema">e-mail</label>
+            </div>
+          </div>
+
+         <div class="row"> <!-- SOCIEDAD FROM DB add value="Sociedad" in case -->
+           <div class="input-field col s9" style="margin-top: 10px; margin-left: 60px;">
+             <input disabled id="soc" type="text" class="validate">
+             <label id="sc" for="soc">Sociedad</label>
+           </div>
+         </div>
+
+          <div class="row"> <!-- T&E ID -->
+           <div class="input-field col s9" style="margin-top: 10px; margin-left: 60px;">
+             <input id="teId" type="text" class="validate">
+             <label for="teId">ID de viaje</label>
+           </div>
+         </div>
+
+        <div class="row red darken-4" style="margin-right: 350px; color: white; font-size:14pt; height: 30px;">- Clase de viaje</div>
+
+        <div class="row" style="margin-top: 20px; margin-left: 60px;"> <!-- RADIO BUTTONS -->
+
+          <p>
+            <label>
+               <input name="group1" type="radio" id="op1" value="Capacitaci�n"/>
+               <span>Capacitaci�n</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" type="radio" id="op2" value="Colegiatura"/>
+              <span>Colegiatura</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" type="radio" id="op3" value="Fondo Fijo"/>
+              <span>Fondo Fijo</span>
+            </label>
+          </p>
+          <p>
+            <label>
+               <input name="group1" type="radio" id="op4" value="Gastos de Viaje"/>
+              <span>Gastos de Viaje</span>
+            </label>
+          </p>
+          <p>
+            <label>
+               <input name="group1" type="radio" id="op5" value="P-Card Bancomer"/>
+              <span>P-Card Bancomer</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" type="radio" id="op6" value="Tarjeta Corporate T&E Bamcomer"/>
+              <span>Tarjeta Corporate T&E Bamcomer</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" type="radio" id="op7" value="Otras Comprobaciones"/>
+              <span>Otras Comprobaciones</span>
+            </label>
+          </p>
+
+        </div>
+
+        <div class="row"> <!-- COMMENTS -->
+          <div class="input-field col s12" style="margin-top: 20px; margin-right: 80px;">
+            <textarea id="commentMe" class="materialize-textarea"></textarea>
+            <label for="commentMe">Your wish is my Comment</label>
+          </div>
+        </div>
+
+        <!-- UPLOAD BUTTON -->
+
+        <form action="#" id="form" method="post">
+          <div class="file-field input-field">
+            <div class="btn red darken-4" style="margin-left: 10px;">
+              <span>File</span>
+              <div id="data"></div>
+              <input required id="aFile" type="file">
+              <!-- input id="submit" type="submit" -->
+            </div>
+            <div class="file-path-wrapper" style="margin-top: 10px; margin-right: 10px;">
+              <input id="aFileT" class="file-path validate" type="text" placeholder="Adjuntar un archivo ZIP">
+            </div>
+          </div>
+        </form>
+
+      <!-- END UPLOAD BUTTON -->
+
+       <div class="row"> <!-- SEND BUTTON -->
+         <div style="margin-top: 50px; margin-left: 360px; margin-bottom: 10px;">
+           <button id="btn" class="waves-effect waves-light btn-small red darken-4"><i class="material-icons left">email</i>Submit</button>
+         </div>
+       </div>
+
+       <!-- WARNING!-->
+       <div class="row">
+         <div style="margin-top: 10px; margin-left: 50px; margin-bottom: 20px;">
+            <label id="warnMe" style="color: red;"> </label>
+         </div>
+       </div>
+
+     <!-- /form -->
+
+     </div> <!-- CLOSE CONTAINER -->
+
+     </div>
+
+     <!-- pic -->
+      <div class="content" style="margin-top: 20px; margin-bottom: 20px;">
+         <img class="content" style="margin-left: 50px;" src="#" alt="Image" height="60"/>
+     <!-- pic -->
+         <img class="content" style="margin-left: 200px;" src="#" alt="Image2" height="60"/>
+      </div>
+
+     <footer class="page-footer red darken-3"> <!-- OPEN FOOTER -->
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Some Footer Content</h5>
+                <p class="grey-text text-lighten-4">Rows and columns here to organize footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#">(GF) Solicitud legalizaci�n de viajes</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#">Informe de progreso</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#">Bussiness</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#">Youtube</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright red darken-4">
+            <div class="container">
+            � Marlon londono 2019
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+      </footer> <!-- CLOSE FOOTER -->
+
+      <!-- iframe width="1080" height="720" src="#" frameborder="0" style="border: 0; margin-left: 200px;" allowfullscreen></iframe -->
+
+      <!-- Compiled and minified CDM JavaScript START -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <!-- Compiled and minified JavaScript END -->
+
+      <?!= include("usf-js"); ?> <!-- javascript page reference -->
+
+   </body>
+
+</html>
+
+<!-- google drive Start >
+<form id="uploadForm" action="Your script end point" method="POST">
+  <input type="hidden" value="" name="fileContent" id="fileContent">
+  <input type="hidden" value="" name="filename" id="filename">
+
+  <label> Name : </label><input required type="text" value="" name="name" id="name">
+  <label> Email :</label> <input required type="text" value="" name="email" id="email">
+  <label> Contact : </label><input required type="text" value="" name="contact" id="contact">
+  <label> SkillSets :</label> <input required type="text" value="" name="skillsets" id="skillsets">
+  <label> LinkedIn Account:</label><input type="text" value="" name="linkedinUrl" id="linkedinUrl">
+
+</form>
+<input required id="attach" name="attach" type="file"/>
+<input value="Submit" type="button" onclick="UploadFile();" / -->
